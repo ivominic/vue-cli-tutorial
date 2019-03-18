@@ -1,0 +1,32 @@
+<template>
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+</template>
+
+<script>
+export default {
+  name: 'HeaderKomponenta',
+  props: {
+    
+  },
+  data() {
+      return {
+        title: "Naslov prve komponente",
+        nizImena: ['Prvo', 'Drugo', 'Treće']
+      }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+header{
+    background: lightgreen;
+    padding: 10px;
+}
+h1{
+    color: #222;
+    text-align: center;
+}
+</style>
