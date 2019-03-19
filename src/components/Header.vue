@@ -1,10 +1,11 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <h1 v-on:click="promijeniNaslov">{{ title }}</h1>
   </header>
 </template>
 
 <script>
+import {bus} from '../main';
 export default {
   name: 'HeaderKomponenta',
   props: {
@@ -15,6 +16,13 @@ export default {
         title: "Naslov prve komponente",
         nizImena: ['Prvo', 'Drugo', 'Treće']
       }
+  },
+  methods: {
+    promijeniNaslov: function(){
+      //this.$emit("promijeniNaslov", 'Drugi tekst za naslov');
+      this.title = "Promijenjen naslov";
+      bus.$emit("naslovPromijenjen", 'Event bus naslov');
+    }
   }
 }
 </script>

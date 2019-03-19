@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-header/>
-    <app-sredina />
+    <app-sredina v-bind:nizObjekata="nizObjekata"/>
     <img alt="Vue logo" src="./assets/logo.png">
     <prva-komponenta/>
     <prvaK/> <!--Globalno registrovana komponenta. Red iznad je lokalno registrovana-->
@@ -23,6 +23,18 @@ export default {
     'app-sredina': SredinaKomponenta,
     PrvaKomponenta
 
+  },
+  data() {
+      return {
+        nizObjekata: [
+          {ime: "Prvo", osobina: "Prva osobina", prikaz: false},
+          {ime: "Drugo", osobina: "Druga osobina", prikaz: false},
+          {ime: "Treće", osobina: "Treća osobina", prikaz: false},
+          {ime: "Četvrto", osobina: "Četvrta osobina", prikaz: false},
+          {ime: "Peto", osobina: "Peta osobina", prikaz: false},
+          {ime: "Šesto", osobina: "Šesta osobina", prikaz: false}
+        ]
+      }
   }
 }
 </script>

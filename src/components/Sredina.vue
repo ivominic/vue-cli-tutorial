@@ -12,12 +12,10 @@
 <script>
 export default {
   name: 'SredinaKomponenta',
-  props: {
-    
-  },
+  props: ["nizObjekata"],
   data() {
       return {
-        title: "Naslov prve komponente",
+        title: "Naslov prve komponente"/*,
         nizObjekata: [
           {ime: "Prvo", osobina: "Prva osobina", prikaz: false},
           {ime: "Drugo", osobina: "Druga osobina", prikaz: false},
@@ -25,8 +23,18 @@ export default {
           {ime: "Četvrto", osobina: "Četvrta osobina", prikaz: false},
           {ime: "Peto", osobina: "Peta osobina", prikaz: false},
           {ime: "Šesto", osobina: "Šesta osobina", prikaz: false}
-        ]
+        ]*///Sada se učitava iz App.vue root komponente sa v-bind:nizObjekata="nizObjekata" u samoj komponenti
       }
+  },
+  methods:{
+
+  },
+  //Lifecycle hooks
+  beforeCreate(){
+    alert('beforeCreate');
+  },
+  created(){
+    alert('U ovom trenutku vršiti čitanje podataka iz baze');
   }
 }
 </script>
