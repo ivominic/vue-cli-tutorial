@@ -6,6 +6,9 @@
     <prva-komponenta/>
     <prvaK/> <!--Globalno registrovana komponenta. Red iznad je lokalno registrovana-->
     <app-footer/>
+    <keep-alive><!--Kad je dinamička komponenta u tagu keep-alive, onda čuva unešene vrijednosti i nakon zamjene komponente-->
+      <component v-bind:is="imeKomponente"></component> <!--Ovako može da se dinamički smještaju komponente. Samo se promijeni ime promjenljive-->
+    </keep-alive>
   </div>
 </template>
 
@@ -33,7 +36,8 @@ export default {
           {ime: "Četvrto", osobina: "Četvrta osobina", prikaz: false},
           {ime: "Peto", osobina: "Peta osobina", prikaz: false},
           {ime: "Šesto", osobina: "Šesta osobina", prikaz: false}
-        ]
+        ],
+        imeKomponente: "app-footer"
       }
   }
 }
